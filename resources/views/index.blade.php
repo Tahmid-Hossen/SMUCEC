@@ -53,7 +53,7 @@
             </div>
             <div class="col-sm-4">
                 <div class="cart2 d-flex align-items-center d-flex justify-content-center">
-                    <a href="{{ Route('add.student') }}">
+                    <a href="{{ Route('all.student') }}">
                     <h1>Students</h1>
                     <img src="images/2cd43b_3e6796c8ae9c415a811a73c28ed089e9_mv2.png" alt=""></a>
                 </div>

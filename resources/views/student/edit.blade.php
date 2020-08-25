@@ -1,5 +1,7 @@
 @extends('welcome')
 @section('content')
+
+<div class="container">
 <div class="admin-section">
   <h1>Edit Student</h1>
 </div>
@@ -79,6 +81,7 @@
         </form>
       </div>
     </div>
+</div>
 </div>
 
 @endsection

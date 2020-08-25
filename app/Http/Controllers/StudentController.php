@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Student;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class StudentController extends Controller
 {
@@ -25,7 +26,7 @@ class StudentController extends Controller
       'image' => 'mimes:jpeg,jpg,png,gif|required|max:10000'
     ]);
 
-    $student = new Students;
+    $student = new Student;
     $student->name = $request->name;
     $student->student_id = $request->student_id;
     $student->department = $request->department;
@@ -55,26 +56,26 @@ class StudentController extends Controller
   }
   }
   public function AllStudent(){
-    $student = Students::all();
+    $student = Student::all();
     return view('student.index',compact('student'));
   }
 
   public function ViewStudent($id) {
 
-    $student = Students::findorfail($id);
+    $student = Student::findorfail($id);
     // return response()->json($student);
     return view('student.viewstudent',compact('student'));
 
   }
 
   public function DeleteStudent($id) {
-    $student = Students::findorfail($id);
+    $student = Student::findorfail($id);
     $student->delete();
     return redirect()->back()->with('success', 'student deleted successfully!');
   }
    
   public function EditStudent($id) {
-    $student = Students::find($id);
+    $student = Student::find($id);
     return view('student.edit',compact('student'));
   }
 
@@ -90,7 +91,7 @@ class StudentController extends Controller
       'image' => 'mimes:jpeg,jpg,png,gif|required|max:10000'
     ]);
 
-    $student = Students::find($id);
+    $student = Student::find($id);
     $student->name = $request->name;
     $student->student_id = $request->student_id;
     $student->department = $request->department;
