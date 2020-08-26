@@ -20,13 +20,21 @@
         <th scope="row"><h5><a href="" style="color: #00ffff; text-decoration: none; ">Add Alumni<img src="https://img.icons8.com/color/48/000000/student-male--v1.png"/></a></h5></th>
       </tr>
       <tr>
-      <th scope="row"><h5><a href="" style="color: #00ffff; text-decoration: none;">Add Teacher <img src="https://img.icons8.com/color/48/000000/teacher.png"/></a></h5></th>
+      <th scope="row"><h5><a href="{{ Route('add.teacher') }}" style="color: #00ffff; text-decoration: none;">Add Teacher <img src="https://img.icons8.com/color/48/000000/teacher.png"/></a></h5></th>
       </tr>
       <tr>
       <th scope="row"><h5><a href="{{ Route('add.student') }}" style="color: #00ffff; text-decoration: none;">Add Student </a></h5></th>
       </tr>
       <tr>
       <th scope="row"><h5><a href="" style="color: #00ffff; text-decoration: none;">Add Blog </a></h5></th>
+      </tr>
+
+      <tr>
+      <th scope="row"><h5><a href="{{ Route('write.post')}}" style="color: #00ffff; text-decoration: none;">Add Event </a></h5></th>
+      </tr>
+
+      <tr>
+      <th scope="row"><h5><a href="" style="color: #00ffff; text-decoration: none;">Add Announcements </a></h5></th>
       </tr>
       </tbody>
     </table>
