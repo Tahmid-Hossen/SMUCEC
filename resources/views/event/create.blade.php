@@ -5,7 +5,8 @@
 <p>
  <a href="{{ Route('add.category') }}" class="btn btn-danger mt-5">Add Category</a>
  <a href="" class="btn btn-success mt-5">All Category</a>
- <a href="" class="btn btn-success mt-5">All Post</a>
+ <a href="{{ Route('all.event') }}" class="btn btn-success mt-5">All Events</a>
+ <a href="{{ Route('all.event') }}" class="btn btn-success mt-5">All Blogs</a>
 </p>
 <hr>
 @if ($errors->any())
@@ -18,11 +19,20 @@
     </div>
 @endif
 
-<form action="" method="POST" enctype="multipart/form-data">
+<form action="{{ route('store.event') }}" method="POST" enctype="multipart/form-data">
      @csrf
     <div class="form-group">
       <label for="exampleFormControlFile1">Enter the title here</label>
       <input type="text" class="form-control" name="title">
+    </div>
+
+    <div class="form-group">
+      <label for="exampleFormControlSelect1">Post Category</label>
+      <select class="form-control" name="category_id">
+        @foreach($category as $row)
+        <option value="{{ $row->id }}">{{ $row->name }}</option>
+        @endforeach
+      </select>
     </div>
   
     <div class="form-group">
@@ -35,6 +45,7 @@
    </div>
    <button type="submit" class="btn btn-primary btn-lg btn-block">Send</button>
 </form>
-@endsection
 </div>
+@endsection
+
 

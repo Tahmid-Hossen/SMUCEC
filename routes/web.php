@@ -21,9 +21,8 @@ Route::get('home',function(){
   echo "this is home page";
 });
 
-Route::get('/contact', function(){
-  return view('contact.pages');
-})->middleware('Age');
+Route::get('/sendemail', 'SendmailController@index')->name('contact.page');
+Route::post('/sendemail/send', 'SendmailController@send');
 
 
 Route::get('admin/page', 'AdminController@admin')->name('admin.page');
@@ -56,4 +55,21 @@ Route::get('edit/category/{id}', 'PostController@EditCategory');
 Route::post('update/category/{id}', 'PostController@UpdateCategory');
 
 //event Route
-Route::get('write/post', 'PostController@WritePost')->name('write.post');
+Route::get('write/event', 'EventController@WriteEvent')->name('write.event');
+Route::post('store/event', 'EventController@StoreEvent')->name('store.event');
+Route::get('all/event', 'EventController@AllEvent')->name('all.event');
+Route::get('view/event/{id}', 'EventController@ViewEvent');
+Route::get('/events', 'EventController@showEvent')->name('Show.event');
+Route::get('edit/event/{id}', 'EventController@EditEvent');
+Route::post('update/event/{id}', 'EventController@UpdateEvent');
+Route::get('delete/event/{id}', 'EventController@DeleteEvent');
+
+//blog Route
+Route::get('write/blog', 'BlogController@WriteBlog')->name('write.blog');
+Route::post('store/blog', 'BlogController@StoreBlog')->name('store.blog');
+Route::get('all/blog', 'BlogController@AllBlog')->name('all.blog');
+Route::get('view/blog/{id}', 'BlogController@ViewBlog');
+// Route::get('/blogs', 'HelloController@showPost')->name('blog.event');
+Route::get('edit/blog/{id}', 'BlogController@EditBlog');
+Route::post('update/blog/{id}', 'BlogController@UpdateBlog');
+Route::get('delete/blog/{id}', 'BlogController@DeleteBlog');

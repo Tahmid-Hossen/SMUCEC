@@ -27,10 +27,10 @@
 
         <li class="menu-li"><a class="mx-2 menu-name" href="{{ url('/') }}">Home</a></li>
         <li class="menu-li"><a class="mx-2 menu-name" href="">Announcement</a></li>
-        <li class="menu-li"><a class="mx-2 menu-name" href="">Upcoming Events</a></li>
+        <li class="menu-li"><a class="mx-2 menu-name" href="{{ Route('Show.event') }}">Upcoming Events</a></li>
         <li class="menu-li"><a class="mx-2 menu-name" href="">Blog</a></li>
         <li class="menu-li"><a class="mx-2 menu-name" href="">Galary</a></li>
-        <li class="menu-li"><a class="mx-2 menu-name" href="">Contact</a></li>
+        <li class="menu-li"><a class="mx-2 menu-name" href="{{ Route('contact.page') }}">Contact</a></li>
 
       </ul>
       <form class="form-inline my-2 my-lg-0">

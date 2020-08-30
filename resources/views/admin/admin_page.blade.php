@@ -30,7 +30,7 @@
       </tr>
 
       <tr>
-      <th scope="row"><h5><a href="{{ Route('write.post')}}" style="color: #00ffff; text-decoration: none;">Add Event </a></h5></th>
+      <th scope="row"><h5><a href="{{ Route('write.event') }}" style="color: #00ffff; text-decoration: none;">Add Event </a></h5></th>
       </tr>
 
       <tr>
